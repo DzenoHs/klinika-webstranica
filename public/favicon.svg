@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F172A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E293B;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FBBF24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#bgGrad)" stroke="url(#accentGrad)" stroke-width="2"/>
+  
+  <!-- Heart with pulse line (medical care symbol) -->
+  <path d="M 50 65 
+           C 50 65, 35 50, 35 42 
+           C 35 32, 42 28, 48 32
+           C 48 32, 50 34, 50 34
+           C 50 34, 52 32, 52 32
+           C 58 28, 65 32, 65 42
+           C 65 50, 50 65, 50 65 Z" 
+        fill="none" 
+        stroke="url(#accentGrad)" 
+        stroke-width="2.5" 
+        stroke-linejoin="round"/>
+  
+  <!-- Pulse line through heart -->
+  <path d="M 25 50 L 35 50 L 38 45 L 42 55 L 45 50 L 50 50 L 53 45 L 57 55 L 62 50 L 75 50" 
+        fill="none" 
+        stroke="#FBBF24" 
+        stroke-width="2" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        opacity="0.9"/>
+  
+  <!-- Medical cross accent -->
+  <g transform="translate(70, 30)">
+    <rect x="-1.5" y="-6" width="3" height="12" fill="#FBBF24" rx="1"/>
+    <rect x="-6" y="-1.5" width="12" height="3" fill="#FBBF24" rx="1"/>
+  </g>
+  
+  <!-- Letters I K -->
+  <text x="42" y="53" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#FBBF24" opacity="0.3">IK</text>
+</svg>

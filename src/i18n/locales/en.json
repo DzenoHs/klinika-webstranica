@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "welcome": "Home {{highlight}}Intensive Care{{/highlight}} with Heart",
+    "subtitle": "Professional {{highlight}}intensive care{{/highlight}} in familiar surroundings. We support you with {{strong}}ventilator care and tracheostomy care{{/strong}}.",
+    "subtitleDesktop": "Professional {{highlight}}intensive care{{/highlight}} in familiar surroundings. We support you with {{strong}}ventilator care, tracheostomy care{{/strong}} and complex medical care – where you feel most comfortable.",
+    "intro": "Sometimes life needs a little more support – and that's exactly where we are for you.",
+    "aboutBtn": "About Us",
+    "contactBtn": "Contact",
+    "available": "24/7 Available",
+    "helpful": "Helpful",
+    "organized": "Organized",
+    "tolerant": "Tolerant",
+    "description": "Professional intensive care in the familiar environment of your home.",
+    "cta": "Request Consultation Now",
+    "ctaText": "Schedule a non-binding consultation now",
+    "stats": {
+      "care": "Care",
+      "home": "At Home",
+      "certified": "Certified"
+    },
+    "badges": {
+      "certified": "Certifi-\ned",
+      "experienced": "Expert",
+      "available": "24/7\nCare"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "mission": "Our heart beats for home intensive care",
+    "description": "We provide professional intensive care in the familiar environment of your home. Our experienced team specializes in respiratory support, tracheostomy care, and complex medical assistance – all with the emotional closeness and comfort of your own home.",
+    "values": {
+      "helpful": "Helpful - We are always there for our patients",
+      "organized": "Organized - Structured and reliable care",
+      "tolerant": "Tolerant - Respectful and understanding"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Professional home intensive care with heart",
+    "intensive": {
+      "title": "Home Intensive Care",
+      "subtitle": "24h respiratory and medical supervision",
+      "description": "Round-the-clock care for patients with ventilators, complex medical equipment, and intensive care needs in the familiar home environment."
+    },
+    "hospital": {
+      "title": "Hospital Replacement Care",
+      "subtitle": "Avoiding hospitalizations",
+      "description": "Professional medical care at home that avoids hospital stays while maintaining the highest medical standards."
+    },
+    "support": {
+      "title": "Support Care",
+      "subtitle": "Help with daily activities",
+      "description": "Support with communication, mobility, and daily life activities to improve quality of life and promote independence."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "We are here for you",
+    "info": {
+      "company": "HOT Pflegedienst GmbH",
+      "address": "Koloniestraße 139, 13359 Berlin",
+      "phone": "030 91532973",
+      "email": "info@hotpflegedienst.de"
+    },
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send Message"
+    },
+    "cta": "Get consultation now",
+    "ctaSubtitle": "Free consultation and individual solutions"
+  },
+  "footer": {
+    "company": "HOT Pflegedienst GmbH",
+    "motto": "H – Helpful | O – Organized | T – Tolerant",
+    "copyright": "© 2025 HOT Pflegedienst GmbH. All rights reserved.",
+    "services": {
+      "intensive": "Intensive Care 24/7",
+      "ventilation": "Ventilation Care",
+      "tracheostomy": "Tracheostomy Care",
+      "home": "Home Care"
+    }
+  },
+  "language": {
+    "switch": "Switch language",
+    "deutsch": "Deutsch",
+    "english": "English"
+  },
+  "cookies": {
+    "title": "Cookie Settings",
+    "description": "We use cookies to provide you with the best experience on our website. You can manage your cookie preferences here.",
+    "accept": "Accept All",
+    "decline": "Essential Only",
+    "settings": "Settings",
+    "settingsDescription": "Manage your cookie settings. You can enable or disable different categories.",
+    "necessary": "Necessary Cookies",
+    "necessaryDesc": "These cookies are required for basic website functionality.",
+    "analytics": "Analytics Cookies",
+    "analyticsDesc": "Help us understand how visitors interact with the website.",
+    "marketing": "Marketing Cookies",
+    "marketingDesc": "Used to personalize and track advertising.",
+    "preferences": "Preference Cookies",
+    "preferencesDesc": "Store your settings and preferences.",
+    "acceptAll": "Accept All",
+    "saveSettings": "Save Settings",
+    "cancel": "Cancel"
+  },
+  "impressum": {
+    "title": "Legal Notice",
+    "subtitle": "Information according to § 5 TMG"
+  },
+  "datenschutz": {
+    "title": "Privacy Policy",
+    "subtitle": "Privacy policy according to GDPR"
+  }
+}
