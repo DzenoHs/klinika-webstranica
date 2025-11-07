@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import { Helmet } from 'react-helmet-async';
 
 const Datenschutz: React.FC = () => {
   const navigate = useNavigate();
@@ -43,6 +44,10 @@ const Datenschutz: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white">
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+        <title>Datenschutzerklärung - HOT Pflegedienst</title>
+      </Helmet>
       
       {/* Back Button - Fixed */}
       <div className="fixed top-4 left-4 z-50">

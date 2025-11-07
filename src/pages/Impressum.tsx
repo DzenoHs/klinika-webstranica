@@ -1,11 +1,16 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Impressum: React.FC = () => {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white">
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+        <title>Impressum - HOT Pflegedienst</title>
+      </Helmet>
       
       {/* Back Button - Fixed */}
       <div className="fixed top-4 left-4 z-50">
