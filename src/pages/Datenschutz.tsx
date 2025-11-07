@@ -45,8 +45,10 @@ const Datenschutz: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white">
       <Helmet>
-        <meta name="robots" content="noindex, nofollow" />
+        <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+        <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet" />
         <title>Datenschutzerklärung - HOT Pflegedienst</title>
+        <link rel="canonical" href="https://www.hotpflegedienst.de/" />
       </Helmet>
       
       {/* Back Button - Fixed */}

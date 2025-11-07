@@ -1,0 +1,22 @@
+{
+  "removal_requests": [
+    {
+      "url": "https://www.hotpflegedienst.de/impressum-%2F-kontakt",
+      "reason": "outdated_content",
+      "action": "remove_from_search"
+    },
+    {
+      "url": "https://www.hotpflegedienst.de/impressum-/-kontakt", 
+      "reason": "outdated_content",
+      "action": "remove_from_search"
+    },
+    {
+      "url_pattern": "https://www.hotpflegedienst.de/impressum*kontakt*",
+      "reason": "pattern_removal",
+      "action": "remove_from_search"
+    }
+  ],
+  "preferred_url": "https://www.hotpflegedienst.de/",
+  "canonical": "https://www.hotpflegedienst.de/",
+  "brand_name": "HOT Pflegedienst"
+}

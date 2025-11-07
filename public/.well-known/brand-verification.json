@@ -1,0 +1,13 @@
+{
+  "brand_name": "HOT Pflegedienst",
+  "canonical_url": "https://www.hotpflegedienst.de/",
+  "remove_urls": [
+    "https://www.hotpflegedienst.de/impressum-%2F-kontakt",
+    "https://www.hotpflegedienst.de/impressum-/-kontakt"
+  ],
+  "preferred_search_result": {
+    "title": "HOT Pflegedienst",
+    "url": "https://www.hotpflegedienst.de/",
+    "description": "HOT Pflegedienst - Professionelle häusliche Intensivpflege in Berlin"
+  }
+}
