@@ -14,7 +14,7 @@ const SEO: React.FC<SEOProps> = ({
   title,
   description,
   keywords,
-  ogImage = '/og-image.jpg',
+  ogImage = 'https://www.hotpflegedienst.de/hotLOGO.jpg',
   ogType = 'website'
 }) => {
   const { language } = useLanguage();
@@ -48,6 +48,30 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="author" content="HOT Pflegedienst GmbH" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta httpEquiv="Content-Language" content={language} />
+      
+      {/* Brand & Company Meta Tags */}
+      <meta name="company" content="HOT Pflegedienst GmbH" />
+      <meta name="business-name" content="HOT Pflegedienst" />
+      <meta name="application-name" content="HOT Pflegedienst" />
+      <meta name="publisher" content="HOT Pflegedienst GmbH" />
+      <meta name="copyright" content="© 2024 HOT Pflegedienst GmbH. Alle Rechte vorbehalten." />
+      
+      {/* Google-specific tags */}
+      <meta name="google-site-verification" content="" />
+      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      <meta name="googlebot" content="index, follow" />
+      
+      {/* Additional SEO tags */}
+      <meta name="rating" content="general" />
+      <meta name="distribution" content="global" />
+      <meta name="theme-color" content="#FF6B35" />
+      <meta name="msapplication-TileColor" content="#FF6B35" />
+      
+      {/* Favicon and Icons */}
+      <link rel="icon" type="image/x-icon" href="/hotLOGO.jpg" />
+      <link rel="apple-touch-icon" href="/hotLOGO.jpg" />
+      <link rel="shortcut icon" href="/hotLOGO.jpg" />
+      <link rel="manifest" href="/manifest.json" />
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />

@@ -1,0 +1,21 @@
+{
+  "name": "HOT Pflegedienst",
+  "short_name": "HOT Pflegedienst",
+  "description": "HOT Pflegedienst - Ambulante Pflege in Berlin",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#FF6B35",
+  "icons": [
+    {
+      "src": "/hotLOGO.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/hotLOGO.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
