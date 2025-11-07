@@ -1,8 +1,19 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { useParallax } from '../hooks/useScrollAnimation';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const Hero: React.FC = () => {
   const { language } = useLanguage();
+  const { ref: parallaxRef, offset } = useParallax(0.5);
+  
+  // Scroll reveal for hero elements
+  const { ref: badgeRef, isVisible: badgeVisible } = useScrollReveal();
+  const { ref: titleRef, isVisible: titleVisible } = useScrollReveal();
+  const { ref: imageRef, isVisible: imageVisible } = useScrollReveal();
+  const { ref: card1Ref, isVisible: card1Visible } = useScrollReveal();
+  const { ref: card2Ref, isVisible: card2Visible } = useScrollReveal();
+  const { ref: card3Ref, isVisible: card3Visible } = useScrollReveal();
 
   const content = {
     de: {
@@ -55,8 +66,14 @@ const Hero: React.FC = () => {
   return (
     <section id="home" className="relative bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700 min-h-screen overflow-hidden">
       
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+      {/* Background Pattern with Parallax */}
+      <div 
+        ref={parallaxRef}
+        className="absolute inset-0 opacity-10 gpu-accelerate"
+        style={{
+          transform: `translateY(${offset * 0.3}px)`,
+        }}
+      >
         <div className="absolute inset-0" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
           backgroundSize: '40px 40px'
@@ -69,14 +86,20 @@ const Hero: React.FC = () => {
           
           {/* Badge */}
           <div className="flex justify-center">
-            <div className="inline-flex items-center bg-accent-500 text-primary-900 px-4 py-2 rounded-full text-xs font-bold shadow-lg">
+            <div 
+              ref={badgeRef}
+              className={`inline-flex items-center bg-accent-500 text-primary-900 px-4 py-2 rounded-full text-xs font-bold shadow-lg reveal ${badgeVisible ? 'animate-fade-in' : ''}`}
+            >
               <span className="w-2 h-2 bg-primary-900 rounded-full mr-2 animate-pulse"></span>
               {t.available}
             </div>
           </div>
 
           {/* Main Heading */}
-          <h1 className="font-heading text-3xl font-bold text-white leading-tight text-center px-2">
+          <h1 
+            ref={titleRef}
+            className={`font-heading text-3xl font-bold text-white leading-tight text-center px-2 reveal ${titleVisible ? 'animate-slide-up delay-100' : ''}`}
+          >
             {language === 'de' ? (
               <>Häusliche <span className="text-accent-500">Intensivpflege</span> mit Herz</>
             ) : (
@@ -86,13 +109,22 @@ const Hero: React.FC = () => {
 
           {/* HOT Values - Stacked Cards */}
           <div className="space-y-3 max-w-sm mx-auto">
-            <div className="bg-primary-600 border-2 border-accent-500 text-white px-4 py-3 rounded-xl font-bold text-sm text-center shadow-lg">
+            <div 
+              ref={card1Ref}
+              className={`bg-primary-600 border-2 border-accent-500 text-white px-4 py-3 rounded-xl font-bold text-sm text-center shadow-lg reveal ${card1Visible ? 'animate-fade-in delay-200' : ''}`}
+            >
               <span className="text-accent-500 text-xl">H</span> – {t.helpful}
             </div>
-            <div className="bg-primary-600 border-2 border-accent-500 text-white px-4 py-3 rounded-xl font-bold text-sm text-center shadow-lg">
+            <div 
+              ref={card2Ref}
+              className={`bg-primary-600 border-2 border-accent-500 text-white px-4 py-3 rounded-xl font-bold text-sm text-center shadow-lg reveal ${card2Visible ? 'animate-fade-in delay-300' : ''}`}
+            >
               <span className="text-accent-500 text-xl">O</span> – {t.organized}
             </div>
-            <div className="bg-primary-600 border-2 border-accent-500 text-white px-4 py-3 rounded-xl font-bold text-sm text-center shadow-lg">
+            <div 
+              ref={card3Ref}
+              className={`bg-primary-600 border-2 border-accent-500 text-white px-4 py-3 rounded-xl font-bold text-sm text-center shadow-lg reveal ${card3Visible ? 'animate-fade-in delay-400' : ''}`}
+            >
               <span className="text-accent-500 text-xl">T</span> – {t.tolerant}
             </div>
           </div>
@@ -109,10 +141,13 @@ const Hero: React.FC = () => {
           </p>
 
           {/* Image Section */}
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-accent-500 max-w-md mx-auto">
+          <div 
+            ref={imageRef}
+            className={`relative rounded-2xl overflow-hidden shadow-2xl border-4 border-accent-500 max-w-md mx-auto reveal ${imageVisible ? 'animate-scale-in delay-500' : ''}`}
+          >
             <div className="relative h-72">
               <img 
-                src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&q=80" 
+                src="/slikaPocetna.png" 
                 alt="HOT Pflegedienst"
                 className="w-full h-full object-cover"
               />
@@ -289,7 +324,7 @@ const Hero: React.FC = () => {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-accent-500 transform hover:scale-105 transition-transform duration-500">
                 <div className="relative h-[600px]">
                   <img 
-                    src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&q=80" 
+                    src="/slikaPocetna.png" 
                     alt="HOT Pflegedienst - Häusliche Intensivpflege"
                     className="w-full h-full object-cover"
                   />

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -287,9 +286,9 @@ const Footer: React.FC = () => {
                 {t.copyright}
               </p>
               <div className="flex items-center space-x-4 text-xs text-primary-200">
-                <Link to="/impressum" className="hover:text-accent-500 transition-colors">{t.impressum}</Link>
+                <a href="/impressum" target="_blank" rel="noopener noreferrer" className="hover:text-accent-500 transition-colors">{t.impressum}</a>
                 <span>•</span>
-                <Link to="/datenschutz" className="hover:text-accent-500 transition-colors">{t.privacy}</Link>
+                <a href="/datenschutz" target="_blank" rel="noopener noreferrer" className="hover:text-accent-500 transition-colors">{t.privacy}</a>
                 <span>•</span>
                 <a href="#" className="hover:text-accent-500 transition-colors">{t.terms}</a>
               </div>

@@ -1,8 +1,18 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const About: React.FC = () => {
   const { language } = useLanguage();
+  
+  // Multiple reveal hooks for different sections
+  const { ref: badgeRef, isVisible: badgeVisible } = useScrollReveal();
+  const { ref: titleRef, isVisible: titleVisible } = useScrollReveal();
+  const { ref: statsRef, isVisible: statsVisible } = useScrollReveal();
+  const { ref: imageRef, isVisible: imageVisible } = useScrollReveal();
+  const { ref: card1Ref, isVisible: card1Visible } = useScrollReveal();
+  const { ref: card2Ref, isVisible: card2Visible } = useScrollReveal();
+  const { ref: card3Ref, isVisible: card3Visible } = useScrollReveal();
 
   const content = {
     de: {
@@ -126,13 +136,19 @@ const About: React.FC = () => {
           
           {/* Hero Statement */}
           <div className="text-center space-y-4">
-            <div className="inline-flex items-center bg-accent-500 px-4 py-2 rounded-full text-xs font-bold text-primary-900 shadow-lg mb-2">
+            <div 
+              ref={badgeRef}
+              className={`inline-flex items-center bg-accent-500 px-4 py-2 rounded-full text-xs font-bold text-primary-900 shadow-lg mb-2 reveal ${badgeVisible ? 'animate-fade-in' : ''}`}
+            >
               <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
               </svg>
               {t.badge}
             </div>
-            <h2 className="font-heading text-3xl font-bold text-primary-900 leading-tight">
+            <h2 
+              ref={titleRef}
+              className={`font-heading text-3xl font-bold text-primary-900 leading-tight reveal ${titleVisible ? 'animate-slide-up delay-100' : ''}`}
+            >
               {t.title}<br/>
               <span className="text-accent-500">{t.titleHighlight}</span>
             </h2>
@@ -142,7 +158,10 @@ const About: React.FC = () => {
           </div>
 
           {/* Stats Cards */}
-          <div className="grid grid-cols-2 gap-3">
+          <div 
+            ref={statsRef}
+            className={`grid grid-cols-2 gap-3 reveal ${statsVisible ? 'animate-scale-in delay-200' : ''}`}
+          >
             <div className="bg-gradient-to-br from-primary-700 to-primary-600 rounded-2xl p-5 text-center shadow-xl border-2 border-accent-500">
               <div className="text-4xl font-bold text-accent-500 mb-1">24/7</div>
               <div className="text-sm text-primary-100 font-medium">{t.available}</div>
@@ -162,7 +181,10 @@ const About: React.FC = () => {
           </div>
 
           {/* Mission Card */}
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+          <div 
+            ref={imageRef}
+            className={`relative rounded-2xl overflow-hidden shadow-2xl reveal ${imageVisible ? 'animate-scale-in delay-300' : ''}`}
+          >
             <div className="relative h-48">
               <img 
                 src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&q=80"
@@ -187,7 +209,10 @@ const About: React.FC = () => {
               {t.whatWeDo}
             </h3>
             
-            <div className="bg-white rounded-xl p-5 shadow-lg border-l-4 border-accent-500">
+            <div 
+              ref={card1Ref}
+              className={`bg-white rounded-xl p-5 shadow-lg border-l-4 border-accent-500 reveal ${card1Visible ? 'animate-slide-left' : ''}`}
+            >
               <div className="flex items-start space-x-4">
                 <div className="bg-accent-100 p-3 rounded-lg flex-shrink-0">
                   <svg className="w-6 h-6 text-accent-600" fill="currentColor" viewBox="0 0 20 20">
@@ -201,7 +226,10 @@ const About: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl p-5 shadow-lg border-l-4 border-secondary-500">
+            <div 
+              ref={card2Ref}
+              className={`bg-white rounded-xl p-5 shadow-lg border-l-4 border-secondary-500 reveal ${card2Visible ? 'animate-slide-left delay-100' : ''}`}
+            >
               <div className="flex items-start space-x-4">
                 <div className="bg-secondary-100 p-3 rounded-lg flex-shrink-0">
                   <svg className="w-6 h-6 text-secondary-600" fill="currentColor" viewBox="0 0 20 20">
@@ -215,7 +243,10 @@ const About: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl p-5 shadow-lg border-l-4 border-primary-500">
+            <div 
+              ref={card3Ref}
+              className={`bg-white rounded-xl p-5 shadow-lg border-l-4 border-primary-500 reveal ${card3Visible ? 'animate-slide-left delay-200' : ''}`}
+            >
               <div className="flex items-start space-x-4">
                 <div className="bg-primary-100 p-3 rounded-lg flex-shrink-0">
                   <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 20 20">

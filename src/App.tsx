@@ -11,16 +11,21 @@ import Footer from './components/Footer';
 import SEO from './components/SEO';
 import CookieManager from './components/cookies/CookieManager';
 import CookieButton from './components/cookies/CookieButton';
+import LoadingScreen from './components/LoadingScreen';
 import Impressum from './pages/Impressum';
 import Datenschutz from './pages/Datenschutz';
 
 const HomePage: React.FC = () => (
   <>
     <SEO />
+    <Header />
     <Hero />
     <About />
     <Services />
     <Contact />
+    <Footer />
+    <CookieManager />
+    <CookieButton />
   </>
 );
 
@@ -28,22 +33,15 @@ function App() {
   return (
     <HelmetProvider>
       <LanguageProvider>
+        <LoadingScreen />
         <Router>
-          <div className="min-h-screen bg-white">
-            <Header />
-            <main>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/impressum" element={<Impressum />} />
-              <Route path="/datenschutz" element={<Datenschutz />} />
-            </Routes>
-          </main>
-          <Footer />
-          <CookieManager />
-          <CookieButton />
-        </div>
-      </Router>
-    </LanguageProvider>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/impressum" element={<Impressum />} />
+            <Route path="/datenschutz" element={<Datenschutz />} />
+          </Routes>
+        </Router>
+      </LanguageProvider>
     </HelmetProvider>
   );
 }

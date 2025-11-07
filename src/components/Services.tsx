@@ -1,8 +1,15 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const Services: React.FC = () => {
   const { language } = useLanguage();
+  
+  // Separate refs for each animated element
+  const { ref: badgeRef, isVisible: badgeVisible } = useScrollReveal();
+  const { ref: card1Ref, isVisible: card1Visible } = useScrollReveal();
+  const { ref: card2Ref, isVisible: card2Visible } = useScrollReveal();
+  const { ref: card3Ref, isVisible: card3Visible } = useScrollReveal();
 
   const content = {
     de: {
@@ -118,7 +125,10 @@ const Services: React.FC = () => {
           
           {/* Section Header */}
           <div className="text-center space-y-3">
-            <div className="inline-flex items-center bg-accent-500 px-3 py-1.5 rounded-full text-[10px] font-bold text-primary-900 shadow-lg mb-1">
+            <div 
+              ref={badgeRef}
+              className={`inline-flex items-center bg-accent-500 px-3 py-1.5 rounded-full text-[10px] font-bold text-primary-900 shadow-lg mb-1 reveal ${badgeVisible ? 'animate-fade-in' : ''}`}
+            >
               <svg className="w-3 h-3 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
                 <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"/>
@@ -138,7 +148,10 @@ const Services: React.FC = () => {
           <div className="space-y-4">
             
             {/* Card 1 */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-accent-500">
+            <div 
+              ref={card1Ref}
+              className={`bg-white rounded-xl shadow-lg overflow-hidden border-2 border-accent-500 gpu-accelerate reveal ${card1Visible ? 'animate-scale-in' : ''}`}
+            >
               <div className="bg-gradient-to-br from-accent-500 to-accent-600 p-5 text-center">
                 <div className="bg-primary-900 w-14 h-14 rounded-lg flex items-center justify-center mx-auto shadow-lg">
                   <svg className="w-8 h-8 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
@@ -160,7 +173,10 @@ const Services: React.FC = () => {
             </div>
 
             {/* Card 2 */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-accent-500">
+            <div 
+              ref={card2Ref}
+              className={`bg-white rounded-xl shadow-lg overflow-hidden border-2 border-accent-500 gpu-accelerate reveal ${card2Visible ? 'animate-scale-in delay-100' : ''}`}
+            >
               <div className="bg-gradient-to-br from-accent-500 to-accent-600 p-5 text-center">
                 <div className="bg-primary-900 w-14 h-14 rounded-lg flex items-center justify-center mx-auto shadow-lg">
                   <svg className="w-8 h-8 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
@@ -182,7 +198,10 @@ const Services: React.FC = () => {
             </div>
 
             {/* Card 3 */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-accent-500">
+            <div 
+              ref={card3Ref}
+              className={`bg-white rounded-xl shadow-lg overflow-hidden border-2 border-accent-500 gpu-accelerate reveal ${card3Visible ? 'animate-scale-in delay-200' : ''}`}
+            >
               <div className="bg-gradient-to-br from-accent-500 to-accent-600 p-5 text-center">
                 <div className="bg-primary-900 w-14 h-14 rounded-lg flex items-center justify-center mx-auto shadow-lg">
                   <svg className="w-8 h-8 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
