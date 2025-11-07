@@ -2,8 +2,17 @@ User-agent: *
 Allow: /
 Allow: /hotLOGO.jpg
 Allow: /slikaPocetna.png
-Disallow: /impressum
-Disallow: /datenschutz
+Disallow: /impressum*
+Disallow: /datenschutz*
+Disallow: /kontakt*
+Disallow: /contact*
+Disallow: /*impressum*
+Disallow: /*kontakt*
+Disallow: /*contact*
+
+# Block problematic cached URLs
+Disallow: /impressum-%2F-kontakt
+Disallow: /impressum-*-kontakt
 
 # Crawl-delay for better server performance
 Crawl-delay: 1

@@ -1,0 +1,20 @@
+/*
+  X-Robots-Tag: index, follow
+  Cache-Control: public, max-age=3600
+  Content-Security-Policy: default-src 'self' 'unsafe-inline' 'unsafe-eval' https:
+
+/impressum*
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet
+  Status: 301
+
+/kontakt*
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet  
+  Status: 301
+
+/contact*
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet
+  Status: 301
+
+/
+  X-Robots-Tag: index, follow
+  Cache-Control: public, max-age=3600

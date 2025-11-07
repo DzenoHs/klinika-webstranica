@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOT Pflegedienst - Seite nicht gefunden</title>
+    <meta name="robots" content="noindex, nofollow">
+    <script>
+        // Automatski redirect na glavnu stranicu nakon 2 sekunde
+        setTimeout(function() {
+            window.location.href = '/';
+        }, 2000);
+        
+        // Ili odmah ako je poznati problematičan URL
+        var path = window.location.pathname;
+        if (path.includes('impressum') || path.includes('kontakt') || path.includes('contact')) {
+            window.location.href = '/';
+        }
+    </script>
+</head>
+<body style="font-family: Arial, sans-serif; text-align: center; padding: 50px; background-color: #f5f5f5;">
+    <div style="max-width: 600px; margin: 0 auto; padding: 40px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <img src="/hotLOGO.jpg" alt="HOT Pflegedienst Logo" style="max-width: 200px; margin-bottom: 20px;">
+        <h1 style="color: #FF6B35; margin-bottom: 20px;">Seite nicht gefunden</h1>
+        <p style="color: #666; margin-bottom: 30px;">Diese Seite existiert nicht. Sie werden automatisch zur Hauptseite weitergeleitet.</p>
+        <a href="/" style="display: inline-block; background: #FF6B35; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold;">Zur Hauptseite</a>
+    </div>
+</body>
+</html>

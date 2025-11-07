@@ -1,4 +1,26 @@
 {
+  "redirects": [
+    {
+      "source": "/impressum-*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/impressum-%2F-kontakt",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kontakt",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
