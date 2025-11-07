@@ -157,6 +157,7 @@ const Contact: React.FC = () => {
               <div className="flex-1">
                 <div className="text-[9px] font-semibold text-primary-200 uppercase tracking-wide mb-0.5">Telefon 24/7</div>
                 <div className="text-base font-bold text-white">030 91532973</div>
+                <div className="text-sm font-semibold text-accent-400">+49 174 9683438</div>
               </div>
               <svg className="w-4 h-4 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"/>
@@ -347,6 +348,7 @@ const Contact: React.FC = () => {
                   <div className="flex-1">
                     <div className="text-[10px] font-semibold text-primary-200 uppercase tracking-wide mb-0.5">Telefon 24/7</div>
                     <div className="text-lg font-bold text-white">030 91532973</div>
+                    <div className="text-base font-semibold text-accent-400">+49 174 9683438</div>
                   </div>
                   <svg className="w-5 h-5 text-accent-500 group-hover:translate-x-2 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"/>

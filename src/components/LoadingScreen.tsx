@@ -83,7 +83,7 @@ const LoadingScreen: React.FC = () => {
         {/* Loading text */}
         <div className="mt-6 text-center">
           <p className="text-white text-lg font-semibold animate-pulse">
-            Intensivpflege Klinika
+            HOT Intensivpflege
           </p>
         </div>
       </div>

@@ -55,7 +55,7 @@ const Impressum: React.FC = () => {
               Kontaktinformationen
             </h2>
             <div className="space-y-2 text-gray-700">
-              <p><span className="font-semibold">Telefon:</span> 030 91532973</p>
+              <p><span className="font-semibold">Telefon:</span> 030 91532973 / +49 174 9683438</p>
               <p><span className="font-semibold">E-Mail:</span> <a href="mailto:info@hotpflegedienst.de" className="text-primary-600 hover:text-accent-500 transition-colors">info@hotpflegedienst.de</a></p>
             </div>
           </div>

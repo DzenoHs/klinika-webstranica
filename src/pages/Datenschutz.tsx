@@ -82,7 +82,7 @@ const Datenschutz: React.FC = () => {
               <p className="font-bold text-lg text-primary-800">HOT Pflegedienst GmbH</p>
               <p>Koloniestraße 139</p>
               <p>13359 Berlin, Deutschland</p>
-              <p><span className="font-semibold">Telefon:</span> 030 91532973</p>
+              <p><span className="font-semibold">Telefon:</span> 030 91532973 / +49 174 9683438</p>
               <p><span className="font-semibold">E-Mail:</span> <a href="mailto:info@hotpflegedienst.de" className="text-primary-600 hover:text-accent-500">info@hotpflegedienst.de</a></p>
             </div>
           </div>
