@@ -1,22 +1,42 @@
 {
   "redirects": [
     {
-      "source": "/impressum-*",
-      "destination": "/",
-      "permanent": true
-    },
-    {
       "source": "/impressum-%2F-kontakt",
       "destination": "/",
       "permanent": true
     },
     {
-      "source": "/kontakt",
+      "source": "/impressum-/-kontakt", 
       "destination": "/",
       "permanent": true
     },
     {
-      "source": "/contact",
+      "source": "/impressum-%252F-kontakt",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/impressum-*-kontakt",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/impressum*kontakt*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/impressum-*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kontakt*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact*",
       "destination": "/",
       "permanent": true
     }

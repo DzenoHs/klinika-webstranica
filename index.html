@@ -30,6 +30,36 @@
     
     <!-- Brand Tracking -->
     <script src="/brand-tracking.js" defer></script>
+    
+    <!-- URL Redirect Interceptor -->
+    <script>
+      // Immediate redirect for problematic URLs
+      (function() {
+        var path = window.location.pathname;
+        var search = window.location.search;
+        var hash = window.location.hash;
+        var fullUrl = path + search + hash;
+        
+        // List of problematic patterns
+        var problematicPatterns = [
+          'impressum-%2F-kontakt',
+          'impressum-/-kontakt', 
+          'impressum-%252F-kontakt',
+          'impressum-kontakt',
+          'impressum_kontakt'
+        ];
+        
+        // Check if current URL matches any problematic pattern
+        var shouldRedirect = problematicPatterns.some(function(pattern) {
+          return fullUrl.toLowerCase().includes(pattern.toLowerCase());
+        });
+        
+        if (shouldRedirect) {
+          console.log('Redirecting problematic URL:', fullUrl);
+          window.location.replace('/');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
