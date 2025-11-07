@@ -21,16 +21,16 @@ const SEO: React.FC<SEOProps> = ({
 
   const seoContent = {
     de: {
-      defaultTitle: 'Intensivklinik - Häusliche Intensivpflege mit Herz in Berlin',
+      defaultTitle: 'HOT Intensivpflege - Häusliche Intensivpflege mit Herz in Berlin',
       defaultDescription: 'Professionelle häusliche Intensivpflege in Berlin. Beatmungspflege, Tracheostoma-Versorgung und umfassende medizinische Betreuung in vertrauter Umgebung. 24/7 für Sie da.',
-      defaultKeywords: 'Intensivpflege Berlin, häusliche Intensivpflege, Beatmungspflege, Tracheostoma-Versorgung, ambulante Intensivpflege, häusliche Krankenpflege, Pflegedienst Berlin, 24-Stunden-Pflege, Intensivpflegedienst',
-      siteName: 'Intensivklinik Berlin'
+      defaultKeywords: 'HOT Pflegedienst, Intensivpflege Berlin, häusliche Intensivpflege, Beatmungspflege, Tracheostoma-Versorgung, ambulante Intensivpflege, häusliche Krankenpflege, Pflegedienst Berlin, 24-Stunden-Pflege, Intensivpflegedienst',
+      siteName: 'HOT Intensivpflege'
     },
     en: {
-      defaultTitle: 'Intensivklinik - Home Intensive Care with Heart in Berlin',
+      defaultTitle: 'HOT Intensive Care - Home Intensive Care with Heart in Berlin',
       defaultDescription: 'Professional home intensive care in Berlin. Ventilator care, tracheostomy care and comprehensive medical care in familiar surroundings. Available 24/7.',
-      defaultKeywords: 'intensive care Berlin, home intensive care, ventilator care, tracheostomy care, outpatient intensive care, home nursing care, nursing service Berlin, 24-hour care, intensive care service',
-      siteName: 'Intensivklinik Berlin'
+      defaultKeywords: 'HOT nursing service, intensive care Berlin, home intensive care, ventilator care, tracheostomy care, outpatient intensive care, home nursing care, nursing service Berlin, 24-hour care, intensive care service',
+      siteName: 'HOT Intensive Care'
     }
   };
 
@@ -45,12 +45,13 @@ const SEO: React.FC<SEOProps> = ({
       <title>{pageTitle}</title>
       <meta name="description" content={pageDescription} />
       <meta name="keywords" content={pageKeywords} />
-      <meta name="author" content="Intensivklinik Berlin" />
+      <meta name="author" content="HOT Pflegedienst GmbH" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta httpEquiv="Content-Language" content={language} />
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />
+      <meta property="og:url" content="https://www.hotpflegedienst.de/" />
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={pageDescription} />
       <meta property="og:image" content={ogImage} />
@@ -63,24 +64,24 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="twitter:description" content={pageDescription} />
       <meta name="twitter:image" content={ogImage} />
       
-      {/* Canonical URL */}
-      <link rel="canonical" href={window.location.href} />
+      {/* Canonical URL - Always point to homepage */}
+      <link rel="canonical" href="https://www.hotpflegedienst.de/" />
       
       {/* Language Alternates */}
-      <link rel="alternate" hrefLang="de" href={window.location.origin + window.location.pathname} />
-      <link rel="alternate" hrefLang="en" href={window.location.origin + window.location.pathname} />
-      <link rel="alternate" hrefLang="x-default" href={window.location.origin + window.location.pathname} />
+      <link rel="alternate" hrefLang="de" href="https://www.hotpflegedienst.de/" />
+      <link rel="alternate" hrefLang="en" href="https://www.hotpflegedienst.de/" />
+      <link rel="alternate" hrefLang="x-default" href="https://www.hotpflegedienst.de/" />
 
       {/* Structured Data - Organization */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "MedicalBusiness",
-          "name": "Intensivklinik Berlin",
+          "name": "HOT Pflegedienst GmbH",
           "description": pageDescription,
-          "url": window.location.origin,
-          "telephone": "+49-30-12345678",
-          "email": "info@intensivklinik-berlin.de",
+          "url": "https://www.hotpflegedienst.de",
+          "telephone": "030 91532973",
+          "email": "info@hotpflegedienst.de",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Koloniestraße 139",
@@ -90,8 +91,8 @@ const SEO: React.FC<SEOProps> = ({
           },
           "geo": {
             "@type": "GeoCoordinates",
-            "latitude": "52.5200",
-            "longitude": "13.4050"
+            "latitude": "52.5488",
+            "longitude": "13.3809"
           },
           "openingHoursSpecification": {
             "@type": "OpeningHoursSpecification",
@@ -107,10 +108,6 @@ const SEO: React.FC<SEOProps> = ({
             "opens": "00:00",
             "closes": "23:59"
           },
-          "sameAs": [
-            "https://www.facebook.com/intensivklinik",
-            "https://www.instagram.com/intensivklinik"
-          ],
           "medicalSpecialty": "Intensive Care",
           "availableService": [
             {
