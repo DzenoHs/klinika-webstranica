@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import ContactForm from './ContactForm';
 
 const Contact: React.FC = () => {
   const { language } = useLanguage();
@@ -78,26 +79,7 @@ const Contact: React.FC = () => {
   };
 
   const t = content[language];
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert(t.successMessage);
-    setFormData({ name: '', email: '', phone: '', message: '' });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+  // Form is handled by ContactForm (Formspree). Local state/handlers removed.
 
   return (
     <section id="contact" className="relative bg-gradient-to-b from-white via-primary-50 to-white overflow-hidden">
@@ -210,79 +192,7 @@ const Contact: React.FC = () => {
             <h3 className="font-heading text-lg font-bold text-primary-900 mb-4 text-center">
               {t.formTitle}
             </h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-3">
-              <div>
-                <label htmlFor="name" className="block text-xs font-semibold text-gray-700 mb-1.5">
-                  Ihr Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 py-2.5 text-sm border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all"
-                  placeholder={t.namePlaceholder}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-xs font-semibold text-gray-700 mb-1.5">
-                  E-Mail *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 py-2.5 text-sm border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all"
-                  placeholder={t.emailPlaceholder}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="phone" className="block text-xs font-semibold text-gray-700 mb-1.5">
-                  Telefon (optional)
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2.5 text-sm border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all"
-                  placeholder={t.phonePlaceholder}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-xs font-semibold text-gray-700 mb-1.5">
-                  Ihre Nachricht *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={4}
-                  className="w-full px-3 py-2.5 text-sm border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all resize-none"
-                  placeholder={t.helpPlaceholder}
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-primary-700 to-primary-600 text-white px-5 py-3 rounded-lg text-sm font-bold hover:from-primary-800 hover:to-primary-700 transition-all shadow-lg hover:shadow-xl active:scale-95"
-              >
-                {t.sendButton} →
-              </button>
-            </form>
-
+            <ContactForm />
             <div className="mt-4 pt-4 border-t border-gray-200 text-center">
               <p className="text-[10px] text-gray-500">
                 {t.responseTime}
@@ -414,80 +324,7 @@ const Contact: React.FC = () => {
                 <h3 className="font-heading text-2xl font-bold text-primary-900 mb-6">
                   {t.formTitle}
                 </h3>
-                
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="name" className="block text-xs font-bold text-gray-700 mb-1.5">
-                        Ihr Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 text-sm border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all"
-                        placeholder={t.namePlaceholder}
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="email" className="block text-xs font-bold text-gray-700 mb-1.5">
-                        E-Mail *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 text-sm border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all"
-                        placeholder={t.emailPlaceholder}
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="phone" className="block text-xs font-bold text-gray-700 mb-1.5">
-                      Telefon (optional)
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 text-sm border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all"
-                      placeholder={t.phonePlaceholder}
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-xs font-bold text-gray-700 mb-1.5">
-                      Ihre Nachricht *
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={4}
-                      className="w-full px-4 py-3 text-sm border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-accent-500 transition-all resize-none"
-                      placeholder={t.helpPlaceholder}
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-primary-700 to-primary-600 text-white px-6 py-4 rounded-lg font-bold text-base hover:from-primary-800 hover:to-primary-700 transition-all shadow-lg hover:shadow-xl hover:scale-105"
-                  >
-                    {t.sendButton} →
-                  </button>
-                </form>
+                <ContactForm />
 
                 <div className="mt-6 pt-6 border-t border-gray-200 text-center">
                   <p className="text-xs text-gray-500">

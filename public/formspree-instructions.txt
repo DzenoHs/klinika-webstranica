@@ -1,0 +1,21 @@
+Formspree setup instructions for HOT Pflegedienst
+
+1) Install client dependency (locally):
+   npm install @formspree/react
+
+2) The site uses the Formspree form ID: xpwovvzo
+   - Ensure this form exists in your Formspree dashboard.
+
+3) Configure email routing in Formspree dashboard:
+   - Open https://formspree.io and log in.
+   - Go to the form with ID `xpwovvzo`.
+   - Under "Notifications" or "Email" settings, set the recipient to: info@hotpflegedienst.de
+   - Verify the recipient (Formspree will send a verification email).
+
+4) Optional: enable Webhooks for server-side processing or to store submissions elsewhere.
+
+5) Test the form from the live site after deploying. The site component will show a success message when the mail is sent.
+
+Notes:
+- The client-side code cannot force Formspree to send to an email address; the recipient must be set in your Formspree account settings.
+- If you need messages to come from a specific sender or include custom headers, configure Formspree advanced settings or add a server-side handler.
