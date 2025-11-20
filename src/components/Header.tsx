@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import LanguageDropdown from './LanguageDropdown';
 
 const Header: React.FC = () => {
-  const { language, toggleLanguage } = useLanguage();
+  const { language } = useLanguage();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const content = {
@@ -19,10 +20,17 @@ const Header: React.FC = () => {
       services: 'Services', 
       contact: 'Contact',
       motto: 'H – Helpful | O – Organized | T – Tolerant'
+    },
+    tr: {
+      home: 'Ana Sayfa',
+      about: 'Hakkımızda',
+      services: 'Hizmetler',
+      contact: 'İletişim',
+      motto: 'H – Yardımsever | O – Organize | T – Hoşgörülü'
     }
   };
 
-  const t = content[language];
+  const t = content[language] || content.de;
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -85,26 +93,74 @@ const Header: React.FC = () => {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-500 transition-all duration-300 group-hover:w-full"></span>
             </button>
 
-            {/* Language Toggle - Desktop */}
-            <button
-              onClick={toggleLanguage}
-              className="bg-accent-500 text-primary-900 px-4 py-2 rounded-full text-sm font-bold hover:bg-accent-600 hover:scale-105 transition-all duration-300 shadow-md ml-4"
-              aria-label="Toggle Language"
-            >
-              {language === 'de' ? '🇬🇧 EN' : '🇩🇪 DE'}
-            </button>
+            {/* Language Dropdown - Desktop */}
+            <div className="ml-4">
+              <LanguageDropdown />
+            </div>
+            {/* Uncomment to use dropdown instead of buttons
+            <div className="relative ml-4" ref={dropdownRef}>
+              <button
+                onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+                className="flex items-center space-x-2 px-4 py-2 bg-primary-600 hover:bg-primary-500 text-primary-100 rounded-lg font-bold transition-all duration-300 shadow-md"
+              >
+                <span>
+                  {language === 'de' && '🇩🇪 DE'}
+                  {language === 'en' && '🇬🇧 EN'}
+                  {language === 'tr' && '🇹🇷 TR'}
+                </span>
+                <svg className={`w-4 h-4 transition-transform duration-200 ${isLangDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              {isLangDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-2xl border-2 border-primary-200 overflow-hidden z-50">
+                  <button
+                    onClick={() => {
+                      setLanguage('de');
+                      setIsLangDropdownOpen(false);
+                    }}
+                    className={`w-full px-4 py-3 text-left flex items-center space-x-2 transition-colors ${
+                      language === 'de' ? 'bg-accent-500 text-primary-900 font-bold' : 'hover:bg-primary-50 text-gray-700'
+                    }`}
+                  >
+                    <span>🇩🇪</span>
+                    <span>Deutsch</span>
+                  </button>
+                  <button
+                    onClick={() => {
+                      setLanguage('en');
+                      setIsLangDropdownOpen(false);
+                    }}
+                    className={`w-full px-4 py-3 text-left flex items-center space-x-2 transition-colors ${
+                      language === 'en' ? 'bg-accent-500 text-primary-900 font-bold' : 'hover:bg-primary-50 text-gray-700'
+                    }`}
+                  >
+                    <span>🇬🇧</span>
+                    <span>English</span>
+                  </button>
+                  <button
+                    onClick={() => {
+                      setLanguage('tr');
+                      setIsLangDropdownOpen(false);
+                    }}
+                    className={`w-full px-4 py-3 text-left flex items-center space-x-2 transition-colors ${
+                      language === 'tr' ? 'bg-accent-500 text-primary-900 font-bold' : 'hover:bg-primary-50 text-gray-700'
+                    }`}
+                  >
+                    <span>🇹🇷</span>
+                    <span>Türkçe</span>
+                  </button>
+                </div>
+              )}
+            </div>
+            */}
           </nav>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center space-x-3">
-            {/* Language Toggle - Mobile (visible before menu opens) */}
-            <button
-              onClick={toggleLanguage}
-              className="bg-accent-500 text-primary-900 px-3 py-1.5 rounded-full text-xs font-bold hover:bg-accent-600 transition-all duration-300 shadow-md"
-              aria-label="Toggle Language"
-            >
-              {language === 'de' ? 'EN' : 'DE'}
-            </button>
+          <div className="lg:hidden flex items-center space-x-2">
+            {/* Language Dropdown - Mobile */}
+            <LanguageDropdown />
 
             {/* Hamburger Menu */}
             <button

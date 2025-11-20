@@ -31,10 +31,16 @@ const SEO: React.FC<SEOProps> = ({
       defaultDescription: 'HOT Pflegedienst - Professional home intensive care in Berlin. Ventilator care, tracheostomy care and comprehensive medical care. Available 24/7.',
       defaultKeywords: 'HOT nursing service, intensive care Berlin, home intensive care, ventilator care, tracheostomy care, outpatient intensive care, home nursing care, nursing service Berlin, 24-hour care, intensive care service',
       siteName: 'HOT Pflegedienst'
+    },
+    tr: {
+      defaultTitle: 'HOT Pflegedienst',
+      defaultDescription: 'HOT Pflegedienst - Berlin\'de profesyonel evde yoğun bakım. Ventilatör bakımı, trakeostomi bakımı ve kapsamlı tıbbi bakım. 7/24 hizmetinizdeyiz.',
+      defaultKeywords: 'HOT bakım hizmeti, yoğun bakım Berlin, evde yoğun bakım, ventilatör bakımı, trakeostomi bakımı, ayakta yoğun bakım, evde hasta bakımı, Berlin bakım hizmeti, 24 saat bakım, yoğun bakım hizmeti',
+      siteName: 'HOT Pflegedienst'
     }
   };
 
-  const t = seoContent[language];
+  const t = seoContent[language] || seoContent.de;
   const pageTitle = title || t.defaultTitle;
   const pageDescription = description || t.defaultDescription;
   const pageKeywords = keywords || t.defaultKeywords;

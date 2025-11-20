@@ -51,10 +51,28 @@ const Hero: React.FC = () => {
       certifiedBadge: 'IK Certified',
       experienced: 'Experienced',
       availableBadge: '24/7 Care'
+    },
+    tr: {
+      available: '7/24 Hizmetinizdeyiz',
+      welcome: 'Yürekten Evde Yoğun Bakım',
+      welcomeHighlight: 'Yoğun Bakım',
+      helpful: 'Yardımsever',
+      organized: 'Organize',
+      tolerant: 'Hoşgörülü',
+      subtitle: 'Tanıdık ortamda profesyonel yoğun bakım. Ventilatör bakımı ve trakeostomi bakımı ile size destek oluyoruz.',
+      subtitleDesktop: 'Tanıdık ortamda profesyonel yoğun bakım. Ventilatör bakımı, trakeostomi bakımı ve karmaşık tıbbi bakım ile size destek oluyoruz – kendinizi en rahat hissettiğiniz yerde.',
+      cta: 'Şimdi Danışma Talep Edin',
+      services: 'Hizmetlerimiz',
+      care: 'Bakım',
+      home: 'Evde',
+      certified: 'Sertifikalı',
+      certifiedBadge: 'IK Sertifikalı',
+      experienced: 'Deneyimli',
+      availableBadge: '7/24 Bakım'
     }
   };
 
-  const t = content[language];
+  const t = content[language] || content.de;
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);

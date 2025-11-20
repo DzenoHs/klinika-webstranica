@@ -107,13 +107,61 @@ const Services: React.FC = () => {
       card3Title: 'Support Care',
       card3Subtitle: 'Daily Life & Quality of Life',
       card3Desc: 'We relieve you in everyday life and promote your independence. Our caregivers assist with daily personal hygiene.'
+    },
+    tr: {
+      badge: 'Hizmetlerimiz',
+      title: 'Evde Yoğun Bakım',
+      titleHighlight: 'en yüksek seviyede',
+      subtitle: 'Evinizin rahatlığında kapsamlı tıbbi bakım',
+      ventilation: 'Ventilatör Bakımı',
+      ventilationDesc: 'Ventilatörlü hastaların 7/24 izlenmesi ve profesyonel bakımı',
+      tracheostomy: 'Trakeostomi Bakımı',
+      tracheostomyDesc: 'Trakeostomların profesyonel bakımı ve tedavisi',
+      medication: 'İlaç Yönetimi',
+      medicationDesc: 'İlaçların güvenli uygulanması ve izlenmesi',
+      monitoring: 'Hayati Fonksiyonların İzlenmesi',
+      monitoringDesc: 'Tüm önemli vücut fonksiyonlarının sürekli izlenmesi',
+      wound: 'Yara Bakımı',
+      woundDesc: 'Yaraların profesyonel tedavisi ve bakımı',
+      nutrition: 'Beslenme Yönetimi',
+      nutritionDesc: 'Yapay beslenme ve beslenme danışmanlığı',
+      physiotherapy: 'Fizyoterapi',
+      physiotherapyDesc: 'Mobilizasyon ve terapötik egzersizler',
+      emergency: 'Acil Durum Yönetimi',
+      emergencyDesc: 'Tıbbi acil durumlar için 7/24 hazır',
+      familySupport: 'Aile Desteği',
+      familySupportDesc: 'Aile üyeleri için danışmanlık ve destek',
+      coordination: 'Doktor Koordinasyonu',
+      coordinationDesc: 'Tedavi eden doktorlarla yakın işbirliği',
+      equipment: 'Tıbbi Ekipman',
+      equipmentDesc: 'Tıbbi ekipmanın sağlanması ve bakımı',
+      documentation: 'Bakım Belgelendirmesi',
+      documentationDesc: 'Tüm bakım önlemlerinin eksiksiz belgelendirmesi',
+      homeQuote: 'Ev, kalbin iyileştiği yerdir.',
+      homeExpertise: 'Sizin eviniz, bizim uzmanlığımız',
+      desktopTitle: 'Evde Yoğun Bakım',
+      desktopSubtitle: 'Size profesyonel bakım hizmetleri sunuyoruz – ihtiyaçlarınıza göre bireysel olarak uyarlanmış.',
+      benefit1: 'Tanıdık ortam iyileşmeyi destekler',
+      benefit2: 'Aile bir arada kalır',
+      benefit3: 'Bireysel, kişisel bakım',
+      benefit4: 'Maliyet etkin alternatif',
+      benefit4Long: 'Hastaneye maliyet etkin alternatif',
+      card1Title: 'Evde Yoğun Bakım',
+      card1Subtitle: '7/24 Bakım',
+      card1Desc: 'Son teknoloji tıbbi ekipmanla profesyonel bakım. Karmaşık durumları olan hastaları güvenli ve yetkin bir şekilde bakıyoruz.',
+      card2Title: 'Hastane Yerine Geçen Bakım',
+      card2Subtitle: 'Hastanede Kalmaktan Kaçınma',
+      card2Desc: 'Gereksiz hastane yatışlarından kaçınmanıza yardımcı oluyoruz ve tıbbi olarak reçete edilmiş tedavi bakımı ile profesyonel destek sağlıyoruz.',
+      card3Title: 'Destek Bakımı',
+      card3Subtitle: 'Günlük Yaşam & Yaşam Kalitesi',
+      card3Desc: 'Günlük yaşamda size destek oluyor ve bağımsızlığınızı teşvik ediyoruz. Bakım görevlilerimiz günlük kişisel hijyende yardımcı olur.'
     }
   };
 
-  const t = content[language];
+  const t = content[language] || content.de;
 
   return (
-    <section id="services" className="relative bg-gradient-to-b from-primary-900 via-primary-800 to-primary-700 overflow-hidden">
+    <section id="services" className="relative bg-gradient-to-b from-primary-900 via-primary-800 to-primary-900 overflow-hidden">
       
       {/* Decorative Background */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent-500 rounded-full opacity-10 blur-3xl translate-x-1/2 -translate-y-1/2"></div>

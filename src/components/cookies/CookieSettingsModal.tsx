@@ -49,10 +49,26 @@ const CookieSettingsModal: React.FC<CookieSettingsProps> = ({ isOpen, onClose, o
       saveSettings: 'Save Settings',
       close: 'Close',
       cancel: 'Cancel'
+    },
+    tr: {
+      title: 'Çerez Ayarlarını Yönet',
+      description: 'Hangi çerezlere izin vermek istediğinizi seçin. Bu ayarlar tarayıcınıza kaydedilecektir.',
+      necessary: 'Gerekli Çerezler',
+      necessaryDesc: 'Bu çerezler web sitesinin çalışması için gereklidir ve devre dışı bırakılamaz.',
+      analytics: 'Analiz Çerezleri',
+      analyticsDesc: 'Bu çerezler ziyaretçilerin web sitesiyle nasıl etkileşime girdiğini anlamamıza yardımcı olur.',
+      marketing: 'Pazarlama Çerezleri',
+      marketingDesc: 'Bu çerezler ilgili reklamları görüntülemek için kullanılır.',
+      preferences: 'Tercih Çerezleri',
+      preferencesDesc: 'Bu çerezler tercihlerinizi ve ayarlarınızı saklar.',
+      acceptAll: 'Hepsini Kabul Et',
+      saveSettings: 'Ayarları Kaydet',
+      close: 'Kapat',
+      cancel: 'İptal'
     }
   };
 
-  const t = content[language];
+  const t = content[language] || content.de;
   
   const [settings, setSettings] = useState<CookieSettings>({
     necessary: true, // Always true, can't be disabled

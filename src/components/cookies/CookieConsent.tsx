@@ -26,10 +26,18 @@ const CookieConsent: React.FC<CookieConsentProps> = ({ onAccept, onDecline, onSe
       decline: 'Decline All',
       settings: 'Settings',
       moreInfo: 'Learn More'
+    },
+    tr: {
+      title: 'Çerez Ayarları',
+      description: 'Bu web sitesi deneyiminizi geliştirmek için çerezler kullanır. Hangi çerezlere izin vermek istediğinizi seçebilirsiniz.',
+      accept: 'Tümünü Kabul Et',
+      decline: 'Tümünü Reddet',
+      settings: 'Ayarlar',
+      moreInfo: 'Daha Fazla Bilgi'
     }
   };
 
-  const t = content[language];
+  const t = content[language] || content.de;
 
   return (
     <>

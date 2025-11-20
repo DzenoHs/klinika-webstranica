@@ -2,7 +2,7 @@ import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Footer: React.FC = () => {
-  const { language, toggleLanguage } = useLanguage();
+  const { language, setLanguage } = useLanguage();
 
   const content = {
     de: {
@@ -56,10 +56,36 @@ const Footer: React.FC = () => {
       ventilation: 'Ventilator Care',
       tracheostomy: 'Tracheostomy Care',
       homeService: '24/7 Care'
+    },
+    tr: {
+      motto: 'H – Yardımsever | O – Organize | T – Hoşgörülü',
+      description: 'Berlin\'de profesyonel evde yoğun bakım – sağlığınız için yürekten ve yeterlilikle.',
+      quickLinks: 'Hızlı Bağlantılar',
+      home: 'Ana Sayfa',
+      about: 'Hakkımızda',
+      services: 'Hizmetler',
+      contact: 'İletişim',
+      contactInfo: 'İletişim Bilgileri',
+      phone: 'Telefon',
+      email: 'E-posta',
+      address: 'Adres',
+      emergency: 'Acil Durum (7/24)',
+      legal: 'Yasal',
+      impressum: 'Künye',
+      privacy: 'Gizlilik Politikası',
+      copyright: '© 2024 HOT Pflegedienst GmbH. Tüm hakları saklıdır.',
+      language: 'Dil',
+      followUs: 'Bizi Takip Edin',
+      servicesTitle: 'Hizmetlerimiz',
+      intensive: 'Yoğun Bakım',
+      terms: 'Şartlar',
+      ventilation: 'Ventilatör Bakımı',
+      tracheostomy: 'Trakeostomi Bakımı',
+      homeService: '7/24 Bakım'
     }
   };
 
-  const t = content[language];
+  const t = content[language] || content.de;
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -158,16 +184,37 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Language Toggle */}
-          <div className="text-center">
+          {/* Language Buttons */}
+          <div className="flex justify-center items-center space-x-2">
             <button
-              onClick={toggleLanguage}
-              className="bg-accent-500 text-primary-900 px-5 py-2.5 rounded-lg text-xs font-bold hover:bg-accent-600 transition-all shadow-lg inline-flex items-center space-x-2"
+              onClick={() => setLanguage('de')}
+              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
+                language === 'de' 
+                  ? 'bg-accent-500 text-primary-900 shadow-lg' 
+                  : 'bg-primary-600 text-primary-100 hover:bg-primary-500'
+              }`}
             >
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M7 2a1 1 0 011 1v1h3a1 1 0 110 2H9.578a18.87 18.87 0 01-1.724 4.78c.29.354.596.696.914 1.026a1 1 0 11-1.44 1.389c-.188-.196-.373-.396-.554-.6a19.098 19.098 0 01-3.107 3.567 1 1 0 01-1.334-1.49 17.087 17.087 0 003.13-3.733 18.992 18.992 0 01-1.487-2.494 1 1 0 111.79-.89c.234.47.489.928.764 1.372.417-.934.752-1.913.997-2.927H3a1 1 0 110-2h3V3a1 1 0 011-1zm6 6a1 1 0 01.894.553l2.991 5.982a.869.869 0 01.02.037l.99 1.98a1 1 0 11-1.79.895L15.383 16h-4.764l-.724 1.447a1 1 0 11-1.788-.894l.99-1.98.019-.038 2.99-5.982A1 1 0 0113 8zm-1.382 6h2.764L13 11.236 11.618 14z" clipRule="evenodd"/>
-              </svg>
-              <span>{language === 'de' ? 'English' : 'Deutsch'}</span>
+              🇩🇪 DE
+            </button>
+            <button
+              onClick={() => setLanguage('en')}
+              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
+                language === 'en' 
+                  ? 'bg-accent-500 text-primary-900 shadow-lg' 
+                  : 'bg-primary-600 text-primary-100 hover:bg-primary-500'
+              }`}
+            >
+              🇬🇧 EN
+            </button>
+            <button
+              onClick={() => setLanguage('tr')}
+              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
+                language === 'tr' 
+                  ? 'bg-accent-500 text-primary-900 shadow-lg' 
+                  : 'bg-primary-600 text-primary-100 hover:bg-primary-500'
+              }`}
+            >
+              🇹🇷 TR
             </button>
           </div>
 
@@ -273,15 +320,38 @@ const Footer: React.FC = () => {
                   <li>• {t.homeService}</li>
                 </ul>
                 
-                <button
-                  onClick={toggleLanguage}
-                  className="bg-accent-500 text-primary-900 px-4 py-2 rounded-lg text-xs font-bold hover:bg-accent-600 transition-all shadow-lg inline-flex items-center space-x-2 mt-4"
-                >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M7 2a1 1 0 011 1v1h3a1 1 0 110 2H9.578a18.87 18.87 0 01-1.724 4.78c.29.354.596.696.914 1.026a1 1 0 11-1.44 1.389c-.188-.196-.373-.396-.554-.6a19.098 19.098 0 01-3.107 3.567 1 1 0 01-1.334-1.49 17.087 17.087 0 003.13-3.733 18.992 18.992 0 01-1.487-2.494 1 1 0 111.79-.89c.234.47.489.928.764 1.372.417-.934.752-1.913.997-2.927H3a1 1 0 110-2h3V3a1 1 0 011-1zm6 6a1 1 0 01.894.553l2.991 5.982a.869.869 0 01.02.037l.99 1.98a1 1 0 11-1.79.895L15.383 16h-4.764l-.724 1.447a1 1 0 11-1.788-.894l.99-1.98.019-.038 2.99-5.982A1 1 0 0113 8zm-1.382 6h2.764L13 11.236 11.618 14z" clipRule="evenodd"/>
-                  </svg>
-                  <span>{language === 'de' ? 'English' : 'Deutsch'}</span>
-                </button>
+                <div className="flex items-center space-x-2 mt-4">
+                  <button
+                    onClick={() => setLanguage('de')}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                      language === 'de' 
+                        ? 'bg-accent-500 text-primary-900 shadow-lg' 
+                        : 'bg-primary-700 text-primary-100 hover:bg-primary-600'
+                    }`}
+                  >
+                    🇩🇪 DE
+                  </button>
+                  <button
+                    onClick={() => setLanguage('en')}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                      language === 'en' 
+                        ? 'bg-accent-500 text-primary-900 shadow-lg' 
+                        : 'bg-primary-700 text-primary-100 hover:bg-primary-600'
+                    }`}
+                  >
+                    🇬🇧 EN
+                  </button>
+                  <button
+                    onClick={() => setLanguage('tr')}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                      language === 'tr' 
+                        ? 'bg-accent-500 text-primary-900 shadow-lg' 
+                        : 'bg-primary-700 text-primary-100 hover:bg-primary-600'
+                    }`}
+                  >
+                    🇹🇷 TR
+                  </button>
+                </div>
               </div>
 
             </div>

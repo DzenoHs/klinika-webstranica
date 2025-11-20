@@ -22,10 +22,18 @@ const ContactForm: React.FC = () => {
       message: 'Your Message *',
       send: 'Send Message',
       success: 'Message sent! We will contact you soon.'
+    },
+    tr: {
+      name: 'Adınız *',
+      email: 'E-posta *',
+      phone: 'Telefon (opsiyonel)',
+      message: 'Mesajınız *',
+      send: 'Mesaj Gönder',
+      success: 'Mesaj gönderildi! Yakında sizinle iletişime geçeceğiz.'
     }
   };
 
-  const t = labels[language];
+  const t = labels[language] || labels.de;
 
   if (state.succeeded) {
     return (

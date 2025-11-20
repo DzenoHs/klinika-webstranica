@@ -75,10 +75,45 @@ const Contact: React.FC = () => {
           We typically respond within <span className="font-bold text-primary-700">24 hours</span>
         </>
       )
+    },
+    tr: {
+      badge: 'İletişim',
+      title: 'Sizin için buradayız',
+      titleHighlight: '7/24 ulaşılabilir',
+      subtitle: 'Sorularınız mı var veya desteğe mi ihtiyacınız var? Bize istediğiniz zaman ulaşın – size yardımcı olmaktan mutluluk duyarız.',
+      formTitle: 'Mesaj Gönder',
+      nameLabel: 'Adınız',
+      namePlaceholder: 'Ahmet Yılmaz',
+      emailLabel: 'E-posta Adresi',
+      emailPlaceholder: 'sizin@email.com',
+      phoneLabel: 'Telefon Numarası',
+      phonePlaceholder: '+49 30 12345678',
+      messageLabel: 'Mesajınız',
+      messagePlaceholder: 'Bize endişenizi açıklayın...',
+      sendButton: 'Mesaj Gönder',
+      phone: 'Telefon',
+      email: 'E-posta',
+      address: 'Adres',
+      emergency: 'Acil Durum',
+      emergencyDesc: '7/24 Acil Servis',
+      hours: 'Çalışma Saatleri',
+      hoursDesc: 'Pzt-Cum: 8:00-18:00',
+      successMessage: 'Mesaj gönderildi! Yakında sizinle iletişime geçeceğiz.',
+      helpPlaceholder: 'Size nasıl yardımcı olabiliriz?',
+      responseTime: 'Genellikle 24 saat içinde yanıt veriyoruz',
+      contactHeader: 'İletişime Geçin',
+      availability: 'Sizin için günün her saati ulaşılabilir durumdayız',
+      reachabilityTitle: 'Erişilebilirlik',
+      reachabilityDesc: '7/24 – Sizin için günün her saati',
+      responseTimeDesktop: (
+        <>
+          Genellikle <span className="font-bold text-primary-700">24 saat</span> içinde yanıt veriyoruz
+        </>
+      )
     }
   };
 
-  const t = content[language];
+  const t = content[language] || content.de;
   // Form is handled by ContactForm (Formspree). Local state/handlers removed.
 
   return (

@@ -118,10 +118,62 @@ const About: React.FC = () => {
       trustQualityTitle: 'Trust & Quality',
       trustQualityDescMobile: 'Certified to the highest standards. Our team of qualified nursing professionals works with heart and state-of-the-art medical expertise.',
       trustQualityDescDesktop: 'Certified to the highest standards. Our team of qualified nursing professionals works with heart and state-of-the-art medical expertise. Your safety and well-being are our top priority.'
+    },
+    tr: {
+      badge: 'Hakkımızda',
+      title: 'İnsanlara bakmak.',
+      titleHighlight: 'Kalplere dokunmak.',
+      subtitle: 'HOT Pflegedienst\'te siz merkezdesiniz. Size insani sıcaklık ve profesyonel yeterlilik ile evde yoğun bakım sunuyoruz.',
+      experience: 'Yıllık Deneyim',
+      patients: 'Memnun Hastalar',
+      team: 'Ekipte Uzmanlar',
+      hotTitle: 'HOT ne anlama gelir',
+      helpful: 'Yardımsever',
+      helpfulDesc: 'Bize ihtiyacınız olduğunda her zaman yanınızdayız – tavsiye, eylem ve endişelerinize açık bir kulak ile.',
+      organized: 'Organize',
+      organizedDesc: 'Yapılandırılmış süreçler ve net iletişim, sorunsuz ve güvenilir bakım sağlar.',
+      tolerant: 'Hoşgörülü',
+      tolerantDesc: 'Her insana saygı ve anlayış, sizinle ve yakınlarınızla etkileşimimizi şekillendirir.',
+      missionTitle: 'Misyonumuz',
+      mission: 'Hastalarımızın tanıdık ortamlarında güvende ve iyi bakılmış hissetmelerini istiyoruz. Amacımız size ve yakınlarınıza yaşam kalitesinin bir parçasını geri vermektir.',
+      whyChooseTitle: 'Neden HOT Pflegedienst?',
+      reason1: 'Bireysel Bakım',
+      reason1Desc: 'Her hasta benzersizdir – bu yüzden herkes için bireysel bir bakım planı oluşturuyoruz.',
+      reason2: '7/24 Erişilebilirlik',
+      reason2Desc: 'Bize ihtiyacınız olduğunda günün her saati yanınızdayız.',
+      reason3: 'Nitelikli Ekip',
+      reason3Desc: 'Bakım uzmanlarımız yoğun bakımda uzun yıllara dayanan deneyime sahiptir.',
+      available: 'Müsait',
+      atHome: 'Evde',
+      certified: 'Sertifikalı',
+      yearsStat: 'TOP',
+      yearsLabel: 'Kalite',
+      patientsStatMobile: '500+',
+      patientsStatDesktop: '500+',
+      teamStatMobile: '25+',
+      teamStatDesktop: '25+',
+      homeTextMobile: 'Profesyonel yoğun bakımı en önemli olduğu yere – evinize getiriyoruz.',
+      homeTextDesktop: 'Yoğun bakımı en önemli olduğu yere – evinize getiriyoruz.',
+      complexCare: 'Tanıdık ortamda karmaşık tıbbi bakım. Sizin eviniz,',
+      ourCare: 'bizim bakımımız.',
+      missionCardTitle: 'Misyonumuz',
+      missionCardText: 'Çalışmamızın merkezinde insanlar var. Profesyonel yoğun bakımı en önemli olduğu yere – evinize getiriyoruz.',
+      whatWeDo: 'Ne yapıyoruz',
+      desktopSubtitle: 'Yıllardır Berlin\'deki aileler en değerli insanlarını bize emanet ediyor. Biz sadece bir bakım hizmetinden fazlasıyız – hayatınızın bir parçasıyız, en önemli anlarda ortaklarınızız.',
+      beatmungTitle: 'Ventilatör Bakımı',
+      beatmungDesc: 'Günün her saati profesyonel solunum desteği. Uzmanlarımız modern ventilatör teknolojisini kullanma konusunda eğitimlidir.',
+      tracTitle: 'Trakeostomi Bakımı',
+      tracDesc: 'Empati ile uzman bakım ve destek. Güvenlik ve yaşam kalitesi sağlıyoruz.',
+      homeIntensiveTitle: 'Evde Yoğun Bakım',
+      homeIntensiveDesc: 'Tanıdık ortamda karmaşık tıbbi bakım. Sizin eviniz, bizim uzmanlığımız – mükemmel kombinasyon.',
+      imageAlt: 'Yürekten Bakım',
+      trustQualityTitle: 'Güven & Kalite',
+      trustQualityDescMobile: 'En yüksek standartlara göre sertifikalıyız. Nitelikli bakım profesyonellerinden oluşan ekibimiz kalp ve son teknoloji tıbbi uzmanlıkla çalışır.',
+      trustQualityDescDesktop: 'En yüksek standartlara göre sertifikalıyız. Nitelikli bakım profesyonellerinden oluşan ekibimiz kalp ve son teknoloji tıbbi uzmanlıkla çalışır. Güvenliğiniz ve refahınız bizim en önemli önceliğimizdir.'
     }
   };
 
-  const t = content[language];
+  const t = content[language as keyof typeof content] || content.de;
 
   return (
     <section id="about" className="relative bg-gradient-to-b from-white to-primary-50 overflow-hidden">

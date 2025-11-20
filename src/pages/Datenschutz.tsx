@@ -37,13 +37,28 @@ const Datenschutz: React.FC = () => {
         retention: 'Data Retention',
         security: 'Data Security'
       }
+    },
+    tr: {
+      title: 'Gizlilik Politikası',
+      subtitle: 'GDPR ve Alman veri koruma yasasına göre',
+      sections: {
+        responsible: 'Sorumlu Taraf',
+        categories: 'Kişisel Veri Kategorileri',
+        purposes: 'İşleme Amaçları',
+        legal: 'Yasal Temeller',
+        rights: 'Haklarınız',
+        cookies: 'Çerezler ve İzleme',
+        contact: 'Veri Koruma Görevlisi',
+        retention: 'Veri Saklama',
+        security: 'Veri Güvenliği'
+      }
     }
   };
 
-  const t = content[language];
+  const t = content[language] || content.de;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-primary-50 via-white to-primary-50">
       <Helmet>
         <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
         <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet" />

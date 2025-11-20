@@ -11,10 +11,13 @@ const CookieButton: React.FC = () => {
     },
     en: {
       settings: 'Cookie Settings'
+    },
+    tr: {
+      settings: 'Çerez Ayarları'
     }
   };
 
-  const t = content[language];
+  const t = content[language] || content.de;
   const [isOpen, setIsOpen] = useState(false);
 
   const handleSaveSettings = (settings: any) => {
