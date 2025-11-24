@@ -14,6 +14,11 @@ const About: React.FC = () => {
   const { ref: card2Ref, isVisible: card2Visible } = useScrollReveal();
   const { ref: card3Ref, isVisible: card3Visible } = useScrollReveal();
 
+
+
+
+
+  //proba
   const content = {
     de: {
       badge: 'Über uns',
