@@ -1,39 +1,7 @@
 {
-  "github": {
-    "silent": true
-  },
-  "redirects": [
-    {
-      "source": "/impressum-%2F-kontakt",
-      "destination": "/"
-    },
-    {
-      "source": "/impressum-/-kontakt", 
-      "destination": "/"
-    },
-    {
-      "source": "/impressum-%252F-kontakt",
-      "destination": "/"
-    },
-    {
-      "source": "/impressum-*-kontakt",
-      "destination": "/"
-    },
-    {
-      "source": "/impressum*kontakt*",
-      "destination": "/"
-    },
-    {
-      "source": "/impressum-:path*",
-      "destination": "/"
-    },
-    {
-      "source": "/kontakt:path*",
-      "destination": "/"
-    },
-    {
-      "source": "/contact:path*",
-      "destination": "/"
-    }
-  ]
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": null,
+  "outputDirectory": "dist"
 }
